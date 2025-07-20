@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Overlay Pokémon TCG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Inputs para cambiar los nombres -->
+  <div class="controls">
+    <div class="name-inputs">
+      <label for="player1Input">Nombre Jugador 1:</label>
+      <input type="text" id="player1Input" placeholder="Player 1" />
+      
+      <label for="player2Input">Nombre Jugador 2:</label>
+      <input type="text" id="player2Input" placeholder="Player 2" />
+
+      <button id="updateNamesButton">Actualizar Nombres</button>
+    </div>
+  </div>
+
+  <!-- Controles de premios y victorias -->
+  <div class="prize-controls">
+    <div class="prize-control">
+      <button id="btnPrize1Dec">-</button>
+      <span>Premios Tomados Jugador 1</span>
+      <button id="btnPrize1Inc">+</button>
+    </div>
+
+    <div class="prize-control">
+      <button id="btnPrize2Dec">-</button>
+      <span>Premios Tomados Jugador 2</span>
+      <button id="btnPrize2Inc">+</button>
+    </div>
+  </div>
+
+  <!-- Controles de victorias -->
+  <div class="win-controls">
+    <div class="win-control">
+      <button id="btnWin1">+1 Win Jugador 1</button>
+    </div>
+    <div class="win-control">
+      <button id="btnWin2">+1 Win Jugador 2</button>
+    </div>
+    <div class="reset-control">
+      <button id="btnResetAll">Resetear Todo</button>
+    </div>
+  </div>
+
+  <!-- Scoreboard -->
+  <div class="scoreboard">
+    <!-- Player 1 -->
+    <div class="player-card player1">
+      <div class="player-name" id="player1Name">Player 1</div>
+      <div class="win-count" id="win1">Victorias: 0</div>
+      <div class="prize-display" id="prize1"></div>
+    </div>
+    <!-- Player 2 -->
+    <div class="player-card player2">
+      <div class="player-name" id="player2Name">Player 2</div>
+      <div class="win-count" id="win2">Victorias: 0</div>
+      <div class="prize-display" id="prize2"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

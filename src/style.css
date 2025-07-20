@@ -1,0 +1,109 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.controls {
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+.name-inputs {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.name-inputs label {
+  display: inline-block;
+  width: 130px;
+  text-align: right;
+  margin-right: 10px;
+}
+
+.name-inputs input {
+  padding: 5px;
+  margin: 5px 0;
+  width: 150px;
+}
+
+.name-inputs button {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.name-inputs button:hover {
+  background-color: #0056b3;
+}
+
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.player-card {
+  background: #ffffffd8;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.prize-controls{
+  background-color: #fff;
+}
+
+
+.player-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.prize-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0;
+}
+
+.prize-display img {
+  width: 32px;
+  height: 32px;
+}
+
+.prize-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-prize {
+  padding: 6px 12px;
+  font-size: 18px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-prize[data-action="decrease"] {
+  background-color: #dc3545;
+}
