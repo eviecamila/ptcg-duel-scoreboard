@@ -41,6 +41,12 @@ body {
   cursor: pointer;
 }
 
+.win-count {
+  font-size: 50px;
+  font-weight: bolder;
+  margin: 0 1vw 0 1vw;
+}
+
 .name-inputs button:hover {
   background-color: #0056b3;
 }
@@ -54,7 +60,7 @@ body {
 }
 
 .player-card {
-  background: #ffffffd8;
+  background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -64,15 +70,18 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.prize-controls{
+.prize-controls {
   background-color: #fff;
 }
-
 
 .player-name {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+  min-width: 20%;
+}
+.space {
+  min-width: 0;
 }
 
 .prize-display {

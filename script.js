@@ -1,23 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Estado inicial
   const initialState = {
-    names: {
-      1: 'Player 1',
-      2: 'Player 2'
-    },
-    prizeState: {
-      1: 0,
-      2: 0
-    },
-    winState: {
-      1: 0,
-      2: 0
-    }
+    names: { 1: 'Player 1', 2: 'Player 2' },
+    prizeState: { 1: 0, 2: 0 },
+    winState: { 1: 0, 2: 0 }
   };
 
-  let currentState = JSON.parse(JSON.stringify(initialState)); // Copia inicial
+  let currentState = JSON.parse(JSON.stringify(initialState));
 
-  // Botón para actualizar nombres
+
+
   document.getElementById('updateNamesButton').addEventListener('click', function () {
     const player1Input = document.getElementById('player1Input').value.trim();
     const player2Input = document.getElementById('player2Input').value.trim();
@@ -33,12 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('player2Name').textContent = currentState.names[2];
   }
 
-  // Rutas de las imágenes
   const prizeImg = 'prize.png';
   const takenImg = 'taken.png';
   const totalPrizes = 6;
 
-  // Función para actualizar los premios
   function updatePrizes(playerId) {
     const container = document.getElementById(`prize${playerId}`);
     container.innerHTML = '';
@@ -47,28 +36,30 @@ document.addEventListener("DOMContentLoaded", function () {
       const img = document.createElement('img');
       img.src = i < currentState.prizeState[playerId] ? takenImg : prizeImg;
       img.alt = i < currentState.prizeState[playerId] ? 'Taken' : 'Prize';
+      img.style.width = '50px';
+      img.style.height = '50px';
       container.appendChild(img);
     }
   }
 
-  // Función para actualizar victorias
   function updateWins(playerId) {
-    document.getElementById(`win${playerId}`).textContent = `Victorias: ${currentState.winState[playerId]}`;
+    document.getElementById(`win${playerId}`).textContent = currentState.winState[playerId];
   }
-  resetMatch = () => {
+
+  function resetMatch() {
     currentState.prizeState[1] = 0;
     currentState.prizeState[2] = 0;
-    updatePrizes(1)
-    updatePrizes(2)
+    updatePrizes(1);
+    updatePrizes(2);
   }
-  // Inicializar premios y victorias
+
+  // Inicializar interfaz
   updateNames();
   updatePrizes(1);
   updatePrizes(2);
   updateWins(1);
   updateWins(2);
 
-  // Botones de control de premios
   document.getElementById('btnPrize1Dec').addEventListener('click', function () {
     if (currentState.prizeState[1] < totalPrizes) {
       currentState.prizeState[1]++;
@@ -97,22 +88,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Botones de victorias
   document.getElementById('btnWin1').addEventListener('click', function () {
     currentState.winState[1]++;
-    resetMatch()
+    resetMatch();
     updateWins(1);
   });
 
   document.getElementById('btnWin2').addEventListener('click', function () {
     currentState.winState[2]++;
-    resetMatch()
+    resetMatch();
     updateWins(2);
   });
 
-  // Botón de resetear todo
   document.getElementById('btnResetAll').addEventListener('click', function () {
-    currentState = JSON.parse(JSON.stringify(initialState)); // Restablecer estado
+    currentState = JSON.parse(JSON.stringify(initialState));
     updateNames();
     updatePrizes(1);
     updatePrizes(2);
